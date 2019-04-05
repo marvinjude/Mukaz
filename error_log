@@ -1,0 +1,8 @@
+[18-Mar-2018 14:37:22 UTC] PHP Fatal error:  Class 'mysqli' not found in /home/mukaznig/public_html/resources/conection.inc.php on line 4
+[23-Jul-2018 17:34:24 Africa/Lagos] PHP Warning:  mysqli::mysqli(): (HY000/2006): MySQL server has gone away in /home/mukaznig/public_html/resources/conection.inc.php on line 4
+[23-Jul-2018 17:35:48 Africa/Lagos] PHP Warning:  mysqli::mysqli(): (HY000/1040): Too many connections in /home/mukaznig/public_html/resources/conection.inc.php on line 4
+[23-Jul-2018 17:41:23 Africa/Lagos] PHP Warning:  mysqli::mysqli(): (HY000/1040): Too many connections in /home/mukaznig/public_html/resources/conection.inc.php on line 4
+[23-Jul-2018 17:45:34 Africa/Lagos] PHP Warning:  mysqli::mysqli(): (08004/1040): Too many connections in /home/mukaznig/public_html/resources/conection.inc.php on line 4
+[23-Jul-2018 17:45:34 Africa/Lagos] PHP Warning:  mysqli::mysqli(): (HY000/1040): Too many connections in /home/mukaznig/public_html/resources/conection.inc.php on line 4
+[23-Jul-2018 17:46:05 Africa/Lagos] PHP Warning:  mysqli::mysqli(): (HY000/1040): Too many connections in /home/mukaznig/public_html/resources/conection.inc.php on line 4
+[02-Feb-2019 10:37:29 Africa/Lagos] PHP Warning:  mysqli::mysqli(): (HY000/1040): Too many connections in /home/mukaznig/public_html/resources/conection.inc.php on line 4

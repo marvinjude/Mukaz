@@ -1,0 +1,1 @@
+[23-Jul-2018 17:16:03 Africa/Lagos] PHP Warning:  mysqli::mysqli(): (HY000/1040): Too many connections in /home/mukaznig/public_html/resources/conection.inc.php on line 4

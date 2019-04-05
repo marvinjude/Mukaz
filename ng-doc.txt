@@ -1,0 +1,131 @@
+1. on page load 
+  set date field to today
+  set Invoice number 
+
+2.on customer field loose focus
+  send an ajax request to the server where data = the customer 
+
+3.store invoice number in session onpageload
+on invoice number  field loose focus||enter clicked store the new invoice number
+
+4.store todays date as the sale_date on the session
+  on date field loose focus||enter clicked store the new date on server 
+
+5. make addstock fields required
+   on add stock click: 
+   remove eventlistener, show loader ,on-succefull, add eventlistener
+   send an ajax request with data as (stock,qty)
+
+   onserver:
+   check if the states quantity is available
+     if available{
+         return (stocksname,qty,subtotal, position_in_session_arr and an href link to unset the session)
+     }else{
+        return toast error message
+     }
+6.on proceed click crete json from session data pass is the the approprite functions
+7. load the invoice 
+
+///god help me
+
+
+
+
+
+
+
+
+
+
+
+
+______________TO_FIX________________
+Files                 Status
+________________|_____________________
+                |
+#customer/view  |
+#expenses/view  |
+ allow the invoice number to be changed
+ allow quantity per ton               |
+                |
+
+
+______________TO_DO_________________
+description               Status
+________________|_____________________
+                |
+#install Mpdf   |  done
+# |
+
+
+
+
+
+________________________________________________________________________
+|              ABOUT THE PDF INVOICE GENERATION SALE                    |
+|_______________________________________________________________________|
+1. submit sales data via ajax
+2  on submit
+3. window.location to the report generator  PHP file 
+4.report.PHP fetch data from db MPDF render html of the invoice as pdf
+________________________________________________________________________
+
+
+ABOUT REPRINTING INVOICES
+________________________________________________________________________
+1. get invoice number 
+2. report.PHP file fetches data from db for MPDF to to render to pdf from HTML
+______________________________________________________________________________
+
+customer(name,phone,date_registered)    (done)
+
+stock
+   receive stock                          (done)
+      add date in to receive stock
+
+Enq 
+  - view daily tranaction
+  - view shop stock (stock name, desc, Qty, cost/price per ton )   (done)
+  - view daily expenses 
+    - show |-------------|------------|(done)
+              start date - End Date    (done)
+    -
+
+
+- post daily expenses        (done)
+     expennse name : transport /lunch /...
+     amount : 
+     date : 
+        save expense goto view expense 
+
+ -view all Expenses (done)  
+ 
+
+
+sale(object):
+  -sell (post sales to customer)
+     customer name , invoice NO(system generated), date, stock name , 
+      quantity sold,  price per ton(from db), quantity per ton (user input ),Amount = formulae(),checkbox(is item supplied?),if yes -showInvoice for printing, else reload page, save last customer to session and select it on page reload for customer field
+  
+
+
+ 
+
+ -post brought foward (B/F)
+
+    amount : 
+    Date :
+       save B/F goto view all b/fs
+
+
+
+
+    formulae (total sales) = (price per ton/ quantity per ton) * quantity sold  
+
+                                50     /   20    *      100   == 250
+
+
+**** selling in table = total sales/quantity sold *******
+   
+
+
