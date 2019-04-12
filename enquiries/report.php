@@ -7,7 +7,6 @@
 	$connection = include('../resources/conection.inc.php');
 	include_once('ctrl-dailysales.php');
 
-	//if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 	if (isset($_GET['start_date']) && isset($_GET['end_date'])){
 		$start_date  = $_GET['start_date'];
 		$end_date = $_GET['end_date'];
@@ -18,10 +17,6 @@
 	}else{
 		die('<h1 style = "text-align:center">You cannot view this page</h1>');
 	}
-
-
-
-	//}
 
 	?>
 
@@ -77,10 +72,13 @@
 		.table{
 			max-width: 100%;
 		}
+    th{
+      font-size:10px;
+    }
 
 	</style>
 </head>
-<body onload="print()">
+<body >
 	<div class = 'container-fluid' >
 		<div class = 'row'>
 			<div class="col-md-8 col-md-offset-2">
