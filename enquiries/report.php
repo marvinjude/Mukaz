@@ -41,8 +41,8 @@
 
 		<style type="text/css">
 		img{
-			width: 100%;
-			height:200px;
+			width: 95%;
+			height:170px;
 		}
 
 		.margin-5{
