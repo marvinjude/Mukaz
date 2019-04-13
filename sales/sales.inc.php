@@ -2,7 +2,11 @@
 
 $connection = include('../resources/conection.inc.php');
 include_once '../functions/invoice_functions.php';
-$sales = getAllSales($connection);
+
+
+$sales = [];
+// $sales = getAllSales($connection);
+
 
 //filter the data by date and supply status
 if(isset($_GET['submit'])){
@@ -106,6 +110,7 @@ function getAllSales($connection){
 }
 
 function getAllSalesAndFilter($connection,$sales_info_array){
+$all_data = array(); 
  $query = "SELECT sales.id AS id ,sales.invoice_number AS invoice,customers.customer_name AS customer_name, 
    customers.customer_phone  AS customer_phone, sales.supply_status AS supply_status, sales.amount_paid AS amount_paid,sales.total AS total, sales.sale_date AS sale_date FROM `sales` INNER JOIN `customers` ON sales.customer_id = customers.id WHERE sale_date BETWEEN '$sales_info_array->start_date' AND '$sales_info_array->end_date'  ";
 
@@ -115,11 +120,15 @@ function getAllSalesAndFilter($connection,$sales_info_array){
    }
 
  if ($result = mysqli_query($connection,$query)){
-   return $result;
- }else{
-   trigger_error(mysqli_error($connection));
-   return false;
- }
+
+    for($i = 0; $i< mysqli_num_rows($result); $i++){
+      array_push($all_data, mysqli_fetch_assoc($result));
+    }
+
+  }else{
+    trigger_error(mysqli_error($connection));
+  }
+  return $all_data;
 }
 
 
