@@ -244,10 +244,11 @@ function isValidCustomer($id,$con){
       <!-- /.box-body -->
 
       <div class="box-footer">
-        <button type="submit" class="btn btn-primary btn-block" id= 'add-stock'>
+        <button type="submit" class="btn btn-primary" style="width:80%"  id= 'add-stock'>
           Add Stock
           <span class = "glyphicon glyphicon-plus"></span>
         </button>
+        <input class="btn btn-info"  style="width:17%"  type ="reset"/>
       </div>
     </form>
   </div>

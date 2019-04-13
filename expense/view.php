@@ -20,7 +20,7 @@ if(isset($_POST['generate_data'])) {
   if($result = mysqli_query($connection, $query)){
 
 
-    $numrows = $mysqli_num_rows($result);
+    $numrows = mysqli_num_rows($result);
     if($numrows  > 0){
       for($i = 0; $i< mysqli_num_rows($result); $i++){
         array_push($data, mysqli_fetch_assoc($result));
@@ -38,9 +38,6 @@ if(isset($_POST['generate_data'])) {
     $_SESSION['error_fetching_data'] = 'error';
   }
 
-}else{
-
-  $data = get_all('expenses');
 }
 
 
@@ -60,8 +57,7 @@ function get_all($table){
     trigger_error(mysqli_error($connection));
   }
   return $all_data;
-
-}   
+}
 ?>
 
 
@@ -224,7 +220,7 @@ function get_all($table){
                           <td> <?=date('d/m/Y',strtotime($row
                             ['expense_date']))?></td>
                             <td>
-                              <button class="btn btn-sm btn-secondary delete-expense" expense-id = <?= $row['id']?>
+                              <button class="btn btn-sm btn-secondary delete-expense" expense-id = <?= $row['id']?>>
                               <span class="glyphicon glyphicon-remove"></span>
                             </button>
                           </td>

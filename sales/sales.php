@@ -258,12 +258,11 @@ if (!isset($_SESSION['user'])){header("Location:../index.php");}
             </thead>
 
             <tbody>
-              <?php $i = 0;?>
-              <?php while($sale = mysqli_fetch_assoc($sales)){ ?> 
+              <?php foreach ($sales as $key=>$sale ): ?>
               <tr>
-                <td><?php echo  ++$i ?></td>
-                <td><?php echo  $sale['customer_name'] ?></td>
-                <td><?php echo  $sale['customer_phone'] ?></td>
+                <td><?= $key + 1 ?></td>
+                <td><?= $sale['customer_name'] ?></td>
+                <td><?= $sale['customer_phone'] ?></td>
                 <td>
                   <a href = '../sales/invoice.php?id=<?php echo  $sale['invoice'] ?>'>
                     <?php echo  $sale['invoice'] ?>
@@ -287,7 +286,7 @@ if (!isset($_SESSION['user'])){header("Location:../index.php");}
                    <span class = 'glyphicon glyphicon-remove'></span>
                  </button>
                </td>
-               <?php } ?>                                                 
+               <?php endforeach ?>                                              
              </tr>
            </tbody>
          </table>

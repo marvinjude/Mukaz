@@ -6,10 +6,10 @@ if(!isset($_SESSION['user'])){
   header("Location: ../");
 }
 
+$data = array();
+
 if(isset($_GET['submit'])){
   $data = get_all('bank_deposits',$_GET['start'],$_GET['end']);
-}else{
-   $data = get_all('bank_deposits');
 }
 
 function get_all($table, $start_date = '', $end_date = ''){
@@ -144,9 +144,9 @@ tr{
                   </thead>
 
                   <tbody>
-                    <?php foreach ($data as $row ): ?>
+                     <?php foreach ($data as $row ): ?>
                       <tr>
-                        <td><?= $row['id']?></td>
+                      <td><?= $row['id']?></td>
                         <td><?=$row['bank_name']?></td>
                         <td><?=$row['amount_deposited']?></td>
                         <td><?=date('d/m/Y',strtotime($row['date_deposited']))?></td>
@@ -212,7 +212,5 @@ tr{
 
 
    </script>
-
- </script>
 </body>
 </html>
